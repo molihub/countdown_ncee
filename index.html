@@ -3,6 +3,14 @@
 	<title>高考倒计时</title>
 
 	<style>
+	body,select,span {
+		font-size: 100px;
+		font-weight: 900;
+	}
+	option {
+		font-size: 30px;
+		font-weight: 900;
+	}
 	#days {
 		color: red;
 	}
@@ -23,9 +31,14 @@
 			<option value="2024">2024高考</option>
 			<option value="2025">2025高考</option>
 		</select>
+		<span onclick="javascript: clickYear();">☜</span>
+	</div>
+	<div>
 		<span>还剩</span>
 		<span id="days">-</span>
 		<span>天</span>
+	</div>
+
 	<script>
 		function refreshDays(year)
 		{
