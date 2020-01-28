@@ -1,0 +1,61 @@
+﻿<html>
+<head>
+	<title>高考倒计时</title>
+
+	<style>
+	#days {
+		color: red;
+	}
+	.bb {
+		color: blue;
+	}
+	</style>
+</head>
+
+<body>
+	<div>
+		<span>距离</span>
+		<select id="year" onchange="javascript: changeYear();">
+			<option value="2020">2020高考</option>
+			<option value="2021">2021高考</option>
+			<option value="2022">2022高考</option>
+			<option value="2023">2023高考</option>
+			<option value="2024">2024高考</option>
+			<option value="2025">2025高考</option>
+		</select>
+		<span>还剩</span>
+		<span id="days">-</span>
+		<span>天</span>
+	<script>
+		function refreshDays(year)
+		{
+			var today = new Date();
+			var target = new Date(year + "-06-07");
+
+			var days = (target - today) / 1000 / 3600 / 24;
+			document.getElementById("days").innerText = Math.ceil(days);
+		}
+
+		function changeYear()
+		{
+			var year = document.getElementById("year").value;
+			localStorage.setItem("year", year);
+			refreshDays(year);
+		}
+	
+		function reload()
+		{
+			var select = document.getElementById("year");
+			var saved = localStorage.getItem("year");
+			if(saved)
+			{
+				document.getElementById("year").value = year;
+			}
+
+			changeYear(year);
+		}
+
+		reload();
+	</script>
+</body>
+</html>
