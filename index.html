@@ -1,21 +1,22 @@
-﻿<html>
+﻿<!doctype html>
+<html>
 <head>
+	<meta charset="utf-8">
 	<title>高考倒计时</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<style>
-	body,select,span {
-		font-size: 100px;
-		font-weight: 900;
+	body,select,option
+	{
+		font-size: xx-large;
+		font-weight: bolder;
 	}
-	option {
-		font-size: 30px;
-		font-weight: 900;
+	select {
+		color: blue;
 	}
 	#days {
 		color: red;
-	}
-	.bb {
-		color: blue;
+		font-size: 8rem;
 	}
 	</style>
 </head>
@@ -33,6 +34,9 @@
 		</select>
 		<span onclick="javascript: clickYear();">☜</span>
 	</div>
+	
+	<p></p>
+	
 	<div>
 		<span>还剩</span>
 		<span id="days">-</span>
